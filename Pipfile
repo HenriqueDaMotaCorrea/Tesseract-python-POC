@@ -7,9 +7,10 @@ verify_ssl = true
 neovim = "*"
 
 [packages]
-pytesseract = "*"
-pillow = "*"
 opencv-python = "*"
+pdf2image = "*"
+pillow = "*"
+pytesseract = "*"
 
 [requires]
 python_version = "3.5"

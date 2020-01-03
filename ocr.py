@@ -1,16 +1,39 @@
-import cv2
 import pytesseract
+from PIL import Image
+from pdf2image import convert_from_path
 
 
-def get_string(img_path):
-    # Read image using opencv
-    img = cv2.imread(img_path)
-
-    # Recognize text with tesseract for python
-    result = pytesseract.image_to_string(img, lang="eng")
+def get_img_string(img):
+    # img = Image.open(img_path)
+    result = pytesseract.image_to_string(img, lang='eng')
     return result
 
-imagem = input("Caminho da imagem de entrada: ")
-print('========================================\n')
-print(get_string(imagem))
-print('\n========================================')
+
+def pdf_to_img(pdf_path):
+    pages = convert_from_path(pdf_path)
+    return pages
+
+
+def get_text_from_pages(pages):
+    text = ''
+    for i in pages:
+        page_text = get_img_string(i)
+        page_separator = '\n\n*** PÁGINA ' + str(pages.index(i) + 1) + '\n\n'
+        text += page_separator + page_text
+    return text
+
+
+def tesseract_test_image():
+    img_path = input('Caminho da imagem de entrada: ')
+    imagem = Image.open(img_path)
+    print('========================================\n')
+    print(get_img_string(imagem))
+
+
+def tesseract_test_pdf():
+    pdf = input('Caminho do pdf de entrada: ')
+    print('========================================\n')
+    print(get_text_from_pages(pdf_to_img(pdf)))
+
+# "main"
+tesseract_test_pdf()

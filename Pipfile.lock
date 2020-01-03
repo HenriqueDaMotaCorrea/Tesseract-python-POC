@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "cbd2ce85959cae497548b6292641edef305095415326af4ccae7af2646642b0d"
+            "sha256": "4f33c1e632c0b03ae45cf260cd1641e2db77ac2b87e948b816c297570d51f673"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -73,6 +73,13 @@
             ],
             "index": "pypi",
             "version": "==4.1.2.30"
+        },
+        "pdf2image": {
+            "hashes": [
+                "sha256:787f6dd77dc02786913fd4ee5766bb9241fe807e3c6ee90e3cff18bcf2f23555"
+            ],
+            "index": "pypi",
+            "version": "==1.11.0"
         },
         "pillow": {
             "hashes": [
