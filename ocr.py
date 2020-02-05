@@ -17,8 +17,13 @@ def pdf_to_img(pdf_path):
 def get_text_from_pages(pages):
     text = ''
     for i in pages:
+        page_separator = (
+            '\n\n========================================\n' +
+            '*** PÁGINA ' +
+            str(pages.index(i) + 1) +
+            '\n========================================\n\n'
+        )
         page_text = get_img_string(i)
-        page_separator = '\n\n*** PÁGINA ' + str(pages.index(i) + 1) + '\n\n'
         text += page_separator + page_text
     return text
 
