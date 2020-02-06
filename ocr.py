@@ -5,7 +5,7 @@ from pdf2image import convert_from_path
 
 def get_img_string(img):
     # img = Image.open(img_path)
-    result = pytesseract.image_to_string(img, lang='eng')
+    result = pytesseract.image_to_string(img, lang='por')
     return result
 
 
@@ -31,14 +31,14 @@ def get_text_from_pages(pages):
 def tesseract_test_image():
     img_path = input('Caminho da imagem de entrada: ')
     imagem = Image.open(img_path)
-    print('========================================\n')
+    print('\n*** Lendo imagem: ' + img_path + '\n')
     print(get_img_string(imagem))
 
 
 def tesseract_test_pdf():
-    pdf = input('Caminho do pdf de entrada: ')
-    print('========================================\n')
-    print(get_text_from_pages(pdf_to_img(pdf)))
+    pdf_path = input('Caminho do pdf de entrada: ')
+    print('\n*** Lendo documento: ' + pdf_path + '\n')
+    print(get_text_from_pages(pdf_to_img(pdf_path)))
 
 # "main"
 tesseract_test_pdf()
