@@ -1,2 +1,2 @@
 # Tesseract-python-POC
-Tesseract OCR Proof Of Concept for reading .pdf files as images and returning text
+Proof Of Concept da utilização do Tesseract OCR para extração de texto de arquivos .pdf
